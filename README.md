@@ -23,15 +23,22 @@ Four deep learning models—Autoencoder, GRU, AlexNet, and MiniVGGNet—are impl
 ---
 
 ## Paper Reference (Inspiration)
-👉 **[Paper Title xxxxxxxxxx
-  – Author Names xxxxxxxxxx
- ](Paper URL here)**
-Original conference/IEEE paper used as inspiration for the model.
+👉 ** Detecting Unbalanced Network Traffic Intrusion  With Deep Learning - S.Pavithra and K.Venkata vikas https://ieeexplore.ieee.org/document/10456379.
 
 ---
 
 ## Our Improvement Over Existing Paper
-xxxxxxxxxx
+❌ Replaced traditional signature-based IDS with deep learning-based detection.
+
+⚖️ Solved class imbalance using SMOTEENN instead of DSSTE.
+
+🎯 Applied Boruta feature selection to remove redundant and irrelevant features.
+
+🧠 Integrated both unsupervised (Autoencoder) and supervised (GRU, CNNs) models.
+
+🔄 Improved zero-day attack detection using Autoencoder reconstruction loss.
+
+📈 Achieved higher accuracy compared to traditional ML models like XGBoost and LSTM.
 
 ---
 
