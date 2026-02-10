@@ -98,37 +98,172 @@ Highly imbalanced dataset (handled using SMOTEENN)
 
 ---
 
-## Dependencies Used
-xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx ...
+## 🧰Dependencies Used
+
+🐍 Python 3.10
+
+🔥 TensorFlow 2.12
+
+🧠 Keras
+
+📊 Scikit-learn
+
+📈 Pandas
+
+🔢 NumPy
+
+📉 Matplotlib
+
+⚖️ imbalanced-learn (SMOTEENN)
+
+🌲 BorutaPy
 
 ---
 
-## EDA & Preprocessing
-xxxxxxxxxx
+## 🔍 EDA & Preprocessing
+
+Merged multiple CSV files into a unified dataset
+
+Removed unnecessary features (Flow ID, Timestamp)
+
+Handled missing and invalid values
+
+Applied Min-Max normalization
+
+Encoded categorical labels
+
+Applied SMOTEENN to balance class distribution
+
+Applied Boruta to select important features
 
 ---
 
-## Model Training Info
-xxxxxxxxxx
+## 🧠Model Training Info
+
+Models Implemented:
+
+1️⃣ Autoencoder
+
+Used for anomaly detection
+
+Learns normal traffic pattern
+
+Detects attacks via reconstruction error
+
+2️⃣ GRU (Gated Recurrent Unit)
+
+Captures temporal patterns in network traffic
+
+Effective for time-dependent attacks
+
+3️⃣ AlexNet
+
+CNN-based model for spatial feature extraction
+
+High classification capability
+
+4️⃣ MiniVGGNet
+
+Lightweight CNN
+
+Efficient and suitable for real-time systems
+
+Training Environment
+
+Google Colab
+
+GPU: Tesla T4 (12GB)
+
+RAM: 12GB
+
+OS: Linux
 
 ---
 
-## Model Testing / Evaluation
-xxxxxxxxxx
+## 🧪Model Testing / Evaluation
+
+## 📏 Metrics Used:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion Matrix
+
+## 🆚 Compared With:
+
+XGBoost
+
+LSTM
+
+Bidirectional LSTM
 
 ---
 
-## Results
-xxxxxxxxxx
+## 🏆 Results
+| Model                      | Accuracy   | F1 Score |
+| -------------------------- | ---------- | -------- |
+| XGBoost                    | 93.95%     | 0.94     |
+| LSTM                       | 96.74%     | 0.97     |
+| AlexNet                    | 98.22%     | 0.98     |
+| MiniVGGNet                 | 99.32%     | 0.98     |
+| GRU (Proposed)             | 98.67%     | 0.98     |
+| **Autoencoder (Proposed)** | **99.67%** | **0.98** |
+
+✅ Best Model:
+
+Autoencoder achieved highest accuracy: 99.67%
 
 ---
 
 ## Limitations & Future Work
-xxxxxxxxxx
+
+## Limitations
+
+Requires high computational resources
+
+Performance depends on dataset quality
+
+Not yet optimized for edge/IoT devices
+
+## Future Enhancements
+
+Integrate attention mechanisms
+
+Real-time streaming intrusion detection
+
+Edge/IoT deployment
+
+Online learning capability
+
+Lightweight deployment version
 
 ---
 
-## Deployment Info
-xxxxxxxxxx
+## 🌍 Deployment Info
+Implemented using Python backend
+
+Can be deployed using:
+
+Flask
+
+FastAPI
+
+Suitable for:
+
+Enterprise network monitoring
+
+Cloud-based intrusion detection
+
+Cybersecurity research platforms
 
 ---
+## 👨‍💻 Developed By
+
+**Durga Bhavani Tumma**  
+Project Lead & Developer  
+https://www.linkedin.com/in/durgabhavani-tumma-14b29028b/
