@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default("Network Intrusion Detection System") }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <div class="nav-container">
+            <a href="/#home" class="logo">
+                <i class="fas fa-shield-halved"></i> NIDS
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/#home">
+                            <i class="fas fa-house"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('predict') }}">
+                            <i class="fas fa-chart-line"></i>
+                            Predict
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#about">
+                            <i class="fas fa-users"></i>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#contact">
+                            <i class="fas fa-message"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                if (Math.random() > 0.5) {
+                    particle.style.background = '#00ccff';
+                }
+                
+                particles.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Handle active state for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const currentHash = window.location.hash;
+            
+            // Remove active class from all links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class based on current path or hash
+            if (currentHash) {
+                const activeLink = document.querySelector(`nav a[href$="${currentHash}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            } else if (currentPath === '/') {
+                const homeLink = document.querySelector('nav a[href="/#home"]');
+                if (homeLink) {
+                    homeLink.classList.add('active');
+                }
+            } else if (currentPath === '/predict') {
+                const predictLink = document.querySelector('nav a[href="/predict"]');
+                if (predictLink) {
+                    predictLink.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
