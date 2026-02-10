@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Analysis Results</h1>
+            <h2>Here are your model's predictions and performance metrics</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            {% if results %}
+                <div class="panel results-panel">
+                    <div class="stats">
+                        <div class="stat-card">
+                            <span>Model Accuracy</span>
+                            <h3>{{ results.accuracy }}%</h3>
+                        </div>
+                        <div class="stat-card">
+                            <span>Benign Traffic</span>
+                            <h3>{{ results.correctly_predicted_normal }}</h3>
+                        </div>
+                        <div class="stat-card">
+                            <span>Malicious Traffic</span>
+                            <h3>{{ results.correctly_predicted_malicious }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="matrix-container">
+                        <h3>Confusion Matrix</h3>
+                        <table class="matrix">
+                            <tr>
+                                <td>Predicted ↓ / Actual →</td>
+                                <td>Benign</td>
+                                <td>Malicious</td>
+                            </tr>
+                            <tr>
+                                <td>Benign</td>
+                                <td>{{ results.confusion_matrix[0][0] }}</td>
+                                <td>{{ results.confusion_matrix[0][1] }}</td>
+                            </tr>
+                            <tr>
+                                <td>Malicious</td>
+                                <td>{{ results.confusion_matrix[1][0] }}</td>
+                                <td>{{ results.confusion_matrix[1][1] }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            {% else %}
+                <div class="flash">
+                    No results to display. Please check the dataset or model training process.
+                </div>
+            {% endif %}
+
+            <div class="action-buttons">
+                <button onclick="window.location.href='{{ url_for('predict') }}'">
+                    <i class="fas fa-redo"></i>
+                    Analyze New Dataset
+                </button>
+                <button class="secondary" onclick="window.location.href='{{ url_for('upload_file') }}'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Upload
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
