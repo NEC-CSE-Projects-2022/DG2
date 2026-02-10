@@ -1,9 +1,9 @@
 
 # Team Number – Project Title
 
-## Team Info
+## 👥 Team Info
 - 22471A05O6 — **T.Durga Bhavani** ( [@durgabhavani](https://www.linkedin.com/in/durgabhavani-tumma-14b29028b/) )
-_Work Done: Implemented data preprocessing pipeline including data cleaning, Min-Max normalization, SMOTEENN class balancing, and Boruta feature selection. Developed and trained Autoencoder and GRU models._
+_Work Done: Implemented data preprocessing pipeline including data cleaning, Min-Max normalization, SMOTEENN class balancing, and Boruta feature selection. Developed and trained Autoencoder and GRU models.
 - 22471A05M4 — **G.Kavya** ( [@kavya](https://www.linkedin.com/in/kavya2811) )
 _Work Done:Implemented AlexNet and MiniVGGNet architectures. Performed model training, hyperparameter tuning, and accuracy optimization. _
 
@@ -15,19 +15,19 @@ _Work Done: Performed performance evaluation using Accuracy, Precision, Recall, 
 
 ---
 
-## Abstract
+## 📌 Abstract
 This project presents an adaptive Intrusion Detection System (IDS) that integrates advanced preprocessing techniques with hybrid deep learning models to improve cyberattack detection. The CICIDS2017 dataset is preprocessed using data cleaning, Min-Max normalization, SMOTEENN for class balancing, and Boruta feature selection for dimensionality reduction.
 
 Four deep learning models—Autoencoder, GRU, AlexNet, and MiniVGGNet—are implemented and evaluated. The Autoencoder achieved the highest performance with 99.67% accuracy, demonstrating the effectiveness of hybrid feature selection and deep learning integration for intrusion detection.
 
 ---
 
-## Paper Reference (Inspiration)
-👉 ** Detecting Unbalanced Network Traffic Intrusion  With Deep Learning - S.Pavithra and K.Venkata vikas https://ieeexplore.ieee.org/document/10456379.
+## 📄 Paper Reference (Inspiration)
+👉  Detecting Unbalanced Network Traffic Intrusion  With Deep Learning - S.Pavithra and K.Venkata vikas https://ieeexplore.ieee.org/document/10456379.
 
 ---
 
-## Our Improvement Over Existing Paper
+## 🚀Our Improvement Over Existing Paper
 ❌ Replaced traditional signature-based IDS with deep learning-based detection.
 
 ⚖️ Solved class imbalance using SMOTEENN instead of DSSTE.
@@ -42,19 +42,59 @@ Four deep learning models—Autoencoder, GRU, AlexNet, and MiniVGGNet—are impl
 
 ---
 
-## About the Project
-Give a simple explanation of:
-- What your project does
-- Why it is useful
-- General project workflow (input → processing → model → output)
+## 🧩 About the Project
+🔍 What the Project Does
+
+Detects malicious network traffic
+
+Classifies attacks into multiple categories
+
+Identifies zero-day attacks using anomaly detection
+
+💡 Why It Is Useful
+
+Protects networks from modern cyber threats
+
+Handles class imbalance effectively
+
+Reduces false positives
+
+Suitable for real-time intrusion detection systems
+
+🔁 Workflow
+
+Network Traffic Dataset→ Data Cleaning → Normalization → SMOTEENN → Boruta → Deep Learning Models → Attack Classification Output
 
 ---
 
-## Dataset Used
-👉 **[Dataset Name](Dataset URL)**
+## 📊 Dataset Used
 
-**Dataset Details:**
-xxxxxxxxxx
+👉 CICIDS2017 Dataset
+https://www.unb.ca/cic/datasets/ids-2017.html
+
+🗂 Dataset Details
+
+Developed by Canadian Institute for Cybersecurity
+
+Contains realistic network traffic data
+
+Includes:
+
+DoS & DDoS attacks
+
+Brute-force attacks
+
+Botnet activity
+
+Web attacks (XSS, SQL Injection)
+
+Port scanning
+
+Infiltration
+
+Over 80 extracted network flow features
+
+Highly imbalanced dataset (handled using SMOTEENN)
 
 ---
 
