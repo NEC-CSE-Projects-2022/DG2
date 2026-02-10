@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Intrusion Detection System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-shield-halved"></i> NIDS
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" id="home-link" onclick="showSection('home')">
+                        <i class="fas fa-home"></i> Home
+                    </a></li>
+                    <li><a href="{{ url_for('predict') }}">
+                        <i class="fas fa-calculator"></i> Predict
+                    </a></li>
+                    <li><a href="#about" id="about-link" onclick="showSection('about')">
+                        <i class="fas fa-info-circle"></i> About
+                    </a></li>
+                    <li><a href="#contact" id="contact-link" onclick="showSection('contact')">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <main id="home" class="page active">
+        <div class="spline-container">
+            <spline-viewer url="https://prod.spline.design/xkNIXmkR0gPFlb06/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Network Intrusion Detection System</h1>
+                <h2>Advanced AI-powered security analysis for your network</h2>
+            </div>
+        </div>
+    </main>   
+    <!-- About Page -->
+    <main id="about" class="page">
+        <div class="about-content">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <div class="member-img">
+                        <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="T. Durga Bhavani">
+                    </div>
+                    <h3>T. Durga Bhavani</h3>
+                    <div class="member-contact">
+                        <p><i class="fas fa-envelope"></i> pandu14652@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7671946513</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-img">
+                        <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="G. Kavya">
+                    </div>
+                    <h3>G. Kavya</h3>
+                    <div class="member-contact">
+                        <p><i class="fas fa-envelope"></i> kavyasujatha49@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 9642936469</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-img">
+                        <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Sk. Khajabi">
+                    </div>
+                    <h3>Sk. Khajabi</h3>
+                    <div class="member-contact">
+                        <p><i class="fas fa-envelope"></i> khajabi2005@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 9701170114</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-img">
+                        <img src="{{ url_for('static', filename='images/4.jpg') }}" alt="Andraju Deepthi Priya">
+                    </div>
+                    <h3>Andraju Deepthi Priya</h3>
+                
+                    <div class="member-contact">
+                        <p><i class="fas fa-envelope"></i> andrajudeepthipriya@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7075562194</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 4rem;">About Our System</h2>
+            <p style="font-size: 1.2rem; color: #ccc; line-height: 1.8; margin-bottom: 2rem;">
+                Our Network Intrusion Detection System uses advanced machine learning algorithms to identify and classify network traffic patterns, helping protect your infrastructure from malicious attacks.
+            </p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                    <p>Real-time threat detection and classification using state-of-the-art ML models trained on comprehensive datasets.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Performance</h3>
+                    <p>High-speed analysis with minimal false positives, ensuring your network remains secure and operational.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-chart-line"></i> Analytics</h3>
+                    <p>Detailed insights and visualizations to help you understand network behavior and security trends.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Page -->
+    <main id="contact" class="page">
+        <div class="contact-content">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzypkea" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i><span>Send Message</span></button>
+                    <div class="success-message" id="successMessage">
+                        ✓ Message sent successfully!
+                    </div>
+                </form>
+                <div class="animation-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
+                        <g style="order: -1;">
+                            <polygon transform="rotate(45 100 100)" stroke-width="1" stroke="#17afbd" fill="none" points="70,70 148,50 130,130 50,150" id="bounce"></polygon>
+                            <polygon transform="rotate(45 100 100)" stroke-width="1" stroke="#07e7fca4" fill="none" points="70,70 148,50 130,130 50,150" id="bounce2"></polygon>
+                            <polygon transform="rotate(45 100 100)" stroke-width="2" stroke="" fill="#414750" points="70,70 150,50 130,130 50,150"></polygon>
+                            <polygon stroke-width="2" stroke="" fill="url(#gradiente)" points="100,70 150,100 100,130 50,100"></polygon>
+                            <defs>
+                                <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente">
+                                    <stop style="stop-color: #1e2026;stop-opacity:1" offset="20%"></stop>
+                                    <stop style="stop-color:#414750;stop-opacity:1" offset="60%"></stop>
+                                </linearGradient>
+                            </defs>
+                            <polygon transform="translate(20, 31)" stroke-width="2" stroke="" fill="#227f8b" points="80,50 80,75 80,99 40,75"></polygon>
+                            <polygon transform="translate(20, 31)" stroke-width="2" stroke="" fill="url(#gradiente2)" points="40,-40 80,-40 80,99 40,75"></polygon>
+                            <defs>
+                                <linearGradient y2="100%" x2="0%" y1="-17%" x1="10%" id="gradiente2">
+                                    <stop style="stop-color: #1f474400;stop-opacity:1" offset="20%"></stop>
+                                    <stop style="stop-color:#10c6d354;stop-opacity:1" offset="100%" id="animatedStop"></stop>
+                                </linearGradient>
+                            </defs>
+                            <polygon transform="rotate(180 100 100) translate(20, 20)" stroke-width="2" stroke="" fill="#17afbd" points="80,50 80,75 80,99 40,75"></polygon>
+                            <polygon transform="rotate(0 100 100) translate(60, 20)" stroke-width="2" stroke="" fill="url(#gradiente3)" points="40,-40 80,-40 80,85 40,110.2"></polygon>
+                            <defs>
+                                <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente3">
+                                    <stop style="stop-color: #10ccd300;stop-opacity:1" offset="20%"></stop>
+                                    <stop style="stop-color:#d3a51054;stop-opacity:1" offset="100%" id="animatedStop"></stop>
+                                </linearGradient>
+                            </defs>
+                            <polygon transform="rotate(45 100 100) translate(80, 95)" stroke-width="2" stroke="" fill="#ffffff" points="5,0 5,5 0,5 0,0" id="particles"></polygon>
+                            <polygon transform="rotate(45 100 100) translate(80, 55)" stroke-width="2" stroke="" fill="#17afbd" points="6,0 6,6 0,6 0,0" id="particles"></polygon>
+                            <polygon transform="rotate(45 100 100) translate(70, 80)" stroke-width="2" stroke="" fill="#17afbd" points="2,0 2,2 0,2 0,0" id="particles"></polygon>
+                            <polygon stroke-width="2" stroke="" fill="#292d34" points="29.5,99.8 100,142 100,172 29.5,130"></polygon>
+                            <polygon transform="translate(50, 92)" stroke-width="2" stroke="" fill="#1f2127" points="50,50 120.5,8 120.5,35 50,80"></polygon>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                if (Math.random() > 0.5) {
+                    particle.style.background = '#00ccff';
+                }
+                
+                particles.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Section navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update navigation active state
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked link
+            const activeLink = document.getElementById(sectionId + '-link');
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // Add event listeners for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle navigation through hash changes
+            function handleHashChange() {
+                const hash = window.location.hash.slice(1) || 'home';
+                showSection(hash);
+            }
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHashChange);
+
+            // Handle initial page load
+            handleHashChange();
+        });
+
+        // File input handling
+        const fileInput = document.getElementById('file');
+        const fileLabel = document.getElementById('selected-file');
+        
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                fileLabel.textContent = this.files[0].name;
+                fileLabel.style.color = '#00ff88';
+            } else {
+                fileLabel.textContent = 'No file selected';
+                fileLabel.style.color = '#aaa';
+            }
+        });
+
+        // Upload form handling
+        const uploadForm = document.getElementById('uploadForm');
+        uploadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const file = fileInput.files[0];
+            if (!file) {
+                showFlash('Please select a file first', 'error');
+                return;
+            }
+
+            // Simulate file upload and processing
+            showFlash('Processing dataset...', 'info');
+            
+            // Simulate results after 2 seconds
+            setTimeout(() => {
+                displayResults({
+                    accuracy: 95.8,
+                    correctly_predicted_normal: 1234,
+                    correctly_predicted_malicious: 856,
+                    confusion_matrix: [[1180, 54], [38, 818]]
+                });
+                navigateToPage('results');
+            }, 2000);
+        });
+
+        // Display results
+        function displayResults(results) {
+            document.getElementById('accuracy').textContent = results.accuracy + '%';
+            document.getElementById('normal-count').textContent = results.correctly_predicted_normal;
+            document.getElementById('malicious-count').textContent = results.correctly_predicted_malicious;
+            
+            document.getElementById('cm-00').textContent = results.confusion_matrix[0][0];
+            document.getElementById('cm-01').textContent = results.confusion_matrix[0][1];
+            document.getElementById('cm-10').textContent = results.confusion_matrix[1][0];
+            document.getElementById('cm-11').textContent = results.confusion_matrix[1][1];
+            
+            document.getElementById('results-content').style.display = 'block';
+            showFlash('Analysis completed successfully!', 'success');
+        }
+
+        // Flash message handler
+        function showFlash(message, type = 'info') {
+            const flashContainer = document.getElementById('flash-container');
+            const flash = document.createElement('div');
+            flash.className = 'flash';
+            flash.textContent = message;
+            
+            if (type === 'success') {
+                flash.style.background = 'rgba(0, 255, 136, 0.2)';
+                flash.style.borderColor = '#00ff88';
+                flash.style.color = '#00ff88';
+            } else if (type === 'error') {
+                flash.style.background = 'rgba(255, 0, 0, 0.2)';
+                flash.style.borderColor = '#ff0000';
+                flash.style.color = '#ff6666';
+            }
+            
+            flashContainer.innerHTML = '';
+            flashContainer.appendChild(flash);
+            
+            setTimeout(() => {
+                flash.style.opacity = '0';
+                flash.style.transform = 'translateY(-20px)';
+                setTimeout(() => flash.remove(), 300);
+            }, 3000);
+        }
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Sorry, there was an error sending your message. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
